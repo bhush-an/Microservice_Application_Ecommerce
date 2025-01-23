@@ -1,0 +1,22 @@
+services:
+  mysql-db:
+    image: mysql:8.0       # Use the MySQL version you prefer
+    container_name: mysql-user-service
+    environment:
+      MYSQL_ROOT_PASSWORD: your_root_password
+      MYSQL_DATABASE: user_service
+      MYSQL_USER: your_db_username
+      MYSQL_PASSWORD: your_db_password
+    ports:
+      - "3310:3306"
+    volumes:
+      - db_data:/var/lib/mysql              # Persist database data using volumes
+    networks:
+      - mysql-net
+
+volumes:
+  db_data:                                  # Named volume to persist database data
+
+networks:
+  mysql-net:
+    driver: bridge

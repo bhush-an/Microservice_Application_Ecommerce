@@ -1,0 +1,59 @@
+services:
+  mysql-db:
+    image: mysql:8.0       # Use the MySQL version you prefer
+    container_name: mysql-order-service
+    environment:
+      MYSQL_ROOT_PASSWORD: your_root_password
+      MYSQL_DATABASE: order_service
+      MYSQL_USER: your_db_username
+      MYSQL_PASSWORD: your_db_password
+    ports:
+      - "3308:3306"
+    volumes:
+      - db_data:/var/lib/mysql              # Persist database data using volumes
+    networks:
+      - mysql-net
+
+  zookeeper:
+    image: confluentinc/cp-zookeeper:7.5.0
+    hostname: zookeeper
+    container_name: zookeeper
+    ports:
+      - "2181:2181"
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+
+  broker:
+    image: confluentinc/cp-kafka:7.5.0
+    container_name: broker
+    ports:
+        - "9092:9092"
+        - "29092:29092"
+    depends_on:
+      - zookeeper
+    environment:
+        KAFKA_BROKER_ID: 1
+        KAFKA_ZOOKEEPER_CONNECT: 'zookeeper:2181'
+        KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+        KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://broker:29092,PLAINTEXT_HOST://localhost:9092
+        KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+
+  kafka-ui:
+    container_name: kafka-ui
+    image: provectuslabs/kafka-ui:latest
+    ports:
+      - "9000:8080"
+    depends_on:
+      - broker
+    environment:
+        KAFKA_CLUSTERS_NAME: local
+        KAFKA_CLUSTERS_BOOTSTRAPSERVERS: broker:29092
+        DYNAMIC_CONFIG_ENABLED: 'true'
+
+volumes:
+  db_data:                                  # Named volume to persist database data
+
+networks:
+  mysql-net:
+    driver: bridge

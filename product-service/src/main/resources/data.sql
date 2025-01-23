@@ -1,0 +1,10 @@
+INSERT INTO product (product_name, description, price) VALUES ('IPhone 15', 'IPhone 15 with its revolutionary Dynamic Island and powerful A16 Bionic chip', 65000);
+INSERT INTO product (product_name, description, price) VALUES ('Samsung Galaxy S24', 'Samsung Galaxy S24 featuring a groundbreaking 200MP camera and Adaptive Vision Pro', 75000);
+INSERT INTO product (product_name, description, price) VALUES ('Google Pixel 8 Pro', 'Google Pixel 8 Pro boasting the best computational photography and Tensor G3 chip', 80000);
+INSERT INTO product (product_name, description, price) VALUES ('OnePlus 12', 'OnePlus 12 with its signature fast charging and Hasselblad-tuned cameras', 60000);
+INSERT INTO product (product_name, description, price) VALUES ('Xiaomi 14 Pro', 'Xiaomi 14 Pro featuring a stunning 150MP camera and innovative under-display camera', 55000);
+INSERT INTO product (product_name, description, price) VALUES ('Vivo X90 Pro Plus', 'Vivo X90 Pro Plus with its exceptional Zeiss-tuned cameras and large battery', 70000);
+INSERT INTO product (product_name, description, price) VALUES ('OPPO Find X6 Pro', 'OPPO Find X6 Pro with its advanced MariSilicon X imaging chip and powerful performance', 65000);
+INSERT INTO product (product_name, description, price) VALUES ('Honor Magic 5 Pro', 'Honor Magic 5 Pro with its innovative Magic Live AI and stunning design', 60000);
+INSERT INTO product (product_name, description, price) VALUES ('Realme GT5 Pro', 'Realme GT5 Pro with its extreme performance and stylish design', 55000);
+INSERT INTO product (product_name, description, price) VALUES ('Tecno Phantom X2 Pro', 'Tecno Phantom X2 Pro with its advanced camera system and long-lasting battery', 45000);

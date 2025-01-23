@@ -1,0 +1,10 @@
+INSERT INTO inventory (product, quantity) VALUES ("iPhone 16", 100);
+INSERT INTO inventory (product, quantity) VALUES ("Samsung Galaxy S25", 70);
+INSERT INTO inventory (product, quantity) VALUES ("Google Pixel 9", 95);
+INSERT INTO inventory (product, quantity) VALUES ("OnePlus 13", 105);
+INSERT INTO inventory (product, quantity) VALUES ("Xiaomi 15", 102);
+INSERT INTO inventory (product, quantity) VALUES ("Vivo X10", 108);
+INSERT INTO inventory (product, quantity) VALUES ("OPPO Find X7", 103);
+INSERT INTO inventory (product, quantity) VALUES ("Honor Magic 6", 107);
+INSERT INTO inventory (product, quantity) VALUES ("Realme GT6", 101);
+INSERT INTO inventory (product, quantity) VALUES ("Tecno Phantom X3", 109);
